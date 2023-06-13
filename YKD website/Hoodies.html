@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JK'S Hoodie Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="YKD.CSS">
+    <style>
+        /* Add CSS styles here to give an 80's look to the hoodie section */
+        .hoodie-section {
+            background-color: #1CA5E3;
+            color: #1CA5E3;
+            padding: 20px;
+        }
+
+        h3.custom-font {
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .page2 {
+            opacity: 0;
+            animation: fade-in 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hoodie {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+     body {
+      background-color: #BE1CE3;
+      color: #BE1CE3;
+      font-family: 'Arial', sans-serif;
+    }
+    .page2 {
+      opacity: 0;
+      animation: fade-in 0.5s ease-in-out forwards;
+    }
+    #music-credit {
+      font-size: 14px;
+      color: #981382;
+      margin-top: 10px;
+    }
+
+      
+        nav {
+            margin-top: 20px;
+        }
+
+        h3.hoodie-item {
+            font-size: 18px;
+            margin-top: 10px;
+color: #E7D2CC;
+text-shadow: -1px 1px 1px #000000;
+        }
+
+        p.hoodie-price {
+            font-size: 16px;
+            font-weight: bold;
+color: #ffffff;
+text-decoration: underline;
+        }
+
+        .logo-image {
+            width: 100px;
+            height: auto;
+        }
+
+        .hoodie-item {
+            width: 300px;
+            margin-bottom: 20px;
+color: #E7D2CC;
+text-shadow: -1px 1px 1px #000000;
+        }
+
+        .hoodie-image {
+            width: 70%;
+            height: auto;
+            border: 3px solid silver;
+        }
+    .audio-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .audio-container h2, .audio-container p {
+            margin: 0;
+        }
+        .controls button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="page2">
+<audio id="myAudio" src="Music/the-executive-lounge.mp3" loop></audio>
+    
+    <div class="audio-container">
+        <div>
+            <h2 id="songName"></h2>
+            <p id="progress"></p>
+        </div>
+        <div class="controls">
+            <button onclick="toggleAudio()">Play</button>
+        </div>
+    </div>
+<header>
+    <div class="hoodie-section">
+        <h2>JK'S Hoodie Collection</h2>
+<p>as of right now they are just to look at</p>
+<p>look at My about me for more info</p>
+    </div>
+</header>
+
+
+
+<div class="hoodie">
+    <!-- Hoodie items go here -->
+           <div class="hoodie-item">
+              <img class="hoodie-image" src="Images/Abstract back .JPG">
+<alt="Abstract Hoodie">
+                <h3 class="hoodie-item">Abstract</h3>
+                <p class="hoodie-price">$50.00</p>
+            </div>
+            <div class="hoodie-item">
+                <img class="hoodie-image" src="Images/Luxury Back.JPG" alt="Luxury Hoodie">
+                <h3 class="hoodie-item">Luxury</h3>
+                <p class="hoodie-price">$50.00</p>
+            </div>
+            <div class="hoodie-item">
+                <img class="hoodie-image" src="Images/Time back.JPG" alt="Time Hoodie">
+                <h3 class="hoodie-item">Time</h3>
+                <p class="hoodie-price">$50.00</p>
+            </div>
+           <div class="hoodie-item">
+               <img class="hoodie-image" src="Images/Names of God back .JPG"
+ alt="Names of God Hoodie"> 
+<h3 class="hoodie-title">Names of God</h3>
+<p class="hoodie-price">$50.00</p>
+</div>
+<div class="hoodie-item">
+                <img class="hoodie-image" src="Images/Change Back.JPG" alt="Change Hoodie">
+                <h3 class="hoodie-title">Change</h3>
+                <p class="hoodie-price">$50.00</p>
+            </div>
+            <div class="hoodie-item">
+                <img class="hoodie-image" src="Images/Let go back .JPG" alt="Just Let GO Hoodie">
+                <h3 class="hoodie-title">Fake Love</h3>
+                <p class="hoodie-price">$50.00</p>
+            </div>
+<div class="hoodie-item">
+               <img class="hoodie-image" src="Images/OG back .JPG"
+ alt="OG Hoodie"> 
+<h3 class="hoodie-title">OG</h3>
+<p class="hoodie-price">$50.00</p>
+</div>
+<div class="hoodie-item">
+                <img class="hoodie-image" src="Images/Pride Back .JPG" alt="Pride Hoodie">
+                <h3 class="hoodie-title">Pride</h3>
+                <p class="hoodie-price">$50.00</p>
+            </div>
+            <div class="hoodie-item">
+                <img class="hoodie-image" src="Images/Rose Back.JPG" alt="Rose Hoodie">
+                <h3 class="hoodie-title">Rose</h3>
+                <p class="hoodie-price">$50.00</p>
+            </div>
+<div class="hoodie-item">
+                <img class="hoodie-image" src="Images/Trippy Back.JPG" alt="Trippy Hoodie">
+                <h3 class="hoodie-title">Trippy</h3>
+                <p class="hoodie-price">$50.00</p>
+            </div>
+            
+    
+
+
+
+
+        </div>
+    </div>
+
+</div>
+
+<div class="logo-container">
+    <img class="logo-image" src="Images/YKD.png" alt="YKD">
+</div>
+
+<div class="footer">
+    &copy; YKD By JK. All rights reserved.
+ <p>Music from <a href="https://uppbeat.io/t/dan-barton/the-executive-lounge">Uppbeat</a> (free for Creators!)</p>
+        <p>License code: HOVRCU37OQIYAEAQ</p>
+</div>
+<script>
+
+        var audio = document.getElementById("myAudio");
+        var songNameElement = document.getElementById("songName");
+        var progressElement = document.getElementById("progress");
+        var isPlaying = false;
+
+        audio.addEventListener("loadedmetadata", function() {
+            songNameElement.textContent = "Song: " + audio.currentSrc.split("/").pop();
+            progressElement.textContent = "Progress: 0:00 / " + formatTime(audio.duration);
+        });
+
+        audio.addEventListener("timeupdate", function() {
+            if (!audio.paused) {
+                progressElement.textContent = "Progress: " + formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
+            }
+        });
+
+        audio.addEventListener("canplay", function() {
+            audio.play();
+            isPlaying = true;
+            document.querySelector("button").textContent = "Pause";
+        });
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                document.querySelector("button").textContent = "Play";
+            } else {
+                audio.play();
+                document.querySelector("button").textContent = "Pause";
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function formatTime(time) {
+            var minutes = Math.floor(time / 60);
+            var seconds = Math.floor(time % 60);
+            return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        }
+   
+</script>
+
+</body>
+</html>

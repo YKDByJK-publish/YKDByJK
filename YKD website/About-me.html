@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me</title>
+  <link rel="stylesheet" type="text/css" href="YKD.CSS">
+<style>
+body {
+      background-color: #868B8E;
+      color: #603F8B;
+      font-family: 'Arial', sans-serif;
+    }
+    .page2 {
+      opacity: 0;
+      animation: fade-in 0.5s ease-in-out forwards;
+    }
+    #music-credit {
+      font-size: 14px;
+      color: #981382;
+      margin-top: 10px;
+    }
+.page2 {
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+  .image-with-border {
+    border: 2px solid silver; /* Adjust the width and color of the border as desired */
+    padding: 0px; /* Optional: Add some padding inside the border */
+  }
+h3 {
+        font-size: 28px;
+        margin-bottom: 20px;
+color: #B7C8C2;
+text-shadow: -1px 1px 1px #000000;}
+ .controls {
+            display: flex;
+            align-items: center;
+        }
+        .audio-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .audio-container h2, .audio-container p {
+            margin: 0;
+        }
+        .controls button {
+            margin-right: 10px;
+        }
+</style>
+</head>
+<body class="page2">
+<audio id="myAudio" src="Music/excusez.mp3" loop></audio>
+    
+    <div class="audio-container">
+        <div>
+            <h2 id="songName"></h2>
+            <p id="progress"></p>
+        </div>
+        <div class="controls">
+            <button onclick="toggleAudio()">Play</button>
+        </div>
+    </div>
+  <header>
+    <h1>About Me</h1>
+
+  </header>
+  
+  <main>
+    <section>
+      <h3>Introduction</h3>
+      <p>Hello! My name is JK, and this is my About Me page.</p>
+<img src="Images/jk.PNG". alt="JK"
+class="image-with-border"width="300" height="300">
+    </section>
+    
+    <section>
+      <h3>Background</h3>
+      <p>I am just your average 17 year old. My skills are being able to learn quick, the rest I havent learned yet. my interests are; Gaming, Streaming, Drawing, Designing, Learning, and Computers. Yes I am as tired as I look, matter of fact I am usually always tired. Either from designing stuff or from having hypothyroidism, but im not complaining. I hope you enjoy this Horrible website but I tried and did it myself so it was unique and I didnt have to pay for one. But Enjoy!!!</p>
+    </section>
+    
+    <section>
+      <h3>Plans for YKD</h3>
+      <ul>
+<li>Get about 5,000 active followers</li>
+<li>maybe launch an nft collection or a coin to help fund YKD(big maybe)</li>
+<li>build up enough funds</li>     
+<li>Have a successful launch</li>
+
+
+<li>Develop more designs</li>        
+<li>launch those designs </li>
+<li>start selling on amazon</li>
+<li>Get the designs in stores</li><!-- Add more hobbies as needed -->
+      </ul>
+    </section>
+  </main>
+  
+ <div class="logo-container">
+        <img class="logo-image" src="Images/YKD.png" alt="YKD">
+    </div>
+    <div class="footer">
+        &copy; YKD By JK.  All rights reserved.
+<p>Music from <a href="https://uppbeat.io/t/roo-walker/excusez-moi">Uppbeat</a> (free for Creators!)</p>
+        <p>License code: WMMSNGUIKXXVHAOP</p>
+<a href="Puzzles/Puzzle-one.html">
+        <img class="logo-image" src="Images/Portal to NoWhere.PNG" alt="Portal to Nowhere">
+    </a>
+    </div>
+<script>
+        var audio = document.getElementById("myAudio");
+        var songNameElement = document.getElementById("songName");
+        var progressElement = document.getElementById("progress");
+        var isPlaying = false;
+
+        audio.addEventListener("loadedmetadata", function() {
+            songNameElement.textContent = "Song: " + audio.currentSrc.split("/").pop();
+            progressElement.textContent = "Progress: 0:00 / " + formatTime(audio.duration);
+        });
+
+        audio.addEventListener("timeupdate", function() {
+            if (!audio.paused) {
+                progressElement.textContent = "Progress: " + formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
+            }
+        });
+
+        audio.addEventListener("canplay", function() {
+            audio.play();
+            isPlaying = true;
+            document.querySelector("button").textContent = "Pause";
+        });
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                document.querySelector("button").textContent = "Play";
+            } else {
+                audio.play();
+                document.querySelector("button").textContent = "Pause";
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function formatTime(time) {
+            var minutes = Math.floor(time / 60);
+            var seconds = Math.floor(time % 60);
+            return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        }
+   
+
+</script>
+</body>
+</html>

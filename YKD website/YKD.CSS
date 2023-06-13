@@ -1,0 +1,183 @@
+<style>
+    /* Custom styles for the 80's design */
+    body {
+      background-color: #000000;
+      color: #000000;
+      font-family: 'Arial', sans-serif;
+    }
+    a.boxed-link {
+        display: inline-block;
+        border: 3px solid dark-blue;
+        padding: 5px;
+        text-decoration: none;
+    }
+.page2 {
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+    a:visited {
+        color: green;
+    }
+    header {
+        background-color: #1CA5E3;
+        padding: 20px;
+        text-align: center;
+border: 3px solid black;
+    }
+
+#play-pause-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.bubble-button {
+  background-color: #ff0080;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.bubble-button:focus {
+  outline: none;
+}
+
+.bubble-button:hover {
+  background-color: #ff0055;
+}
+    h1 {
+        font-size: 36px;
+        margin: 0;
+color: #E35A1C;
+text-shadow: -2px 1px 1px #000000;
+    }
+
+    nav {
+        margin-top: 20px;
+        text-decoration: none;
+    }
+
+    nav a {
+        color: #EEEDE7;
+        text-decoration: none;
+        margin: 0 10px;
+text-shadow: -1px 1px 1px #000000;
+    }
+element-selector {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Change the alpha value */
+}
+
+    section {
+        padding: 5px 0;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+color: #E35A1C;
+text-shadow: -1px 1px 1px #000000;
+    }
+    .slideshow-container {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .slideshow {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .slide {
+        width: 65%;
+        padding: -2px;
+        box-sizing: border-box-shadow;
+        border: 5px solid silver;
+}
+
+    .slide img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .container {
+        max-width: 960px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+color: #EEEDE7 ;
+text-shadow: -1px 1px 1px #000000;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-container {
+        text-align: center;
+        margin-bottom: 40px;
+margin-top: 30px;
+    }
+.transition-effect {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+ display: inline-block;
+        border: 3px solid pink;
+        padding: 5px;
+        text-decoration: none;
+}
+
+    .logo-image {
+        width: 100px;
+        height: auto;
+
+    }
+
+    li {
+        margin: 0 10px;
+        font-weight: bold;
+text-shadow: -1px 1px 1px #000000;
+color: #FFC2C7;
+    }
+
+    /* Additional styling for the 80's design */
+    #about p,
+    #collections p,
+    #contact p {
+        color:  #FFC2C7;
+    }
+.footer{
+color: #ffffff;
+text-shadow:-1px 1px 1px #000000;
+}
+    #about p:last-child,
+    #collections p:last-child,
+    #contact p:last-child {
+        margin-bottom: 0;
+    }
+</style>

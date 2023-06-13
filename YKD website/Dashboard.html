@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YKDByJK - Clothing Brand</title>
+  <!-- CSS and other dependencies -->
+  <link rel="stylesheet" type="text/css" href="YKD.CSS">
+  <style>
+    body {
+      background-color: #9800E4;
+      color: #603F8B;
+      font-family: 'Arial', sans-serif;
+    }
+    .page2 {
+      opacity: 0;
+      animation: fade-in 0.5s ease-in-out forwards;
+    }
+  /* Styling for the pop-up container */
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            position: relative;
+        }
+
+        /* Styling for the close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #aaa;
+            cursor: pointer;
+        }
+    #music-credit {
+      font-size: 14px;
+      color: #981382;
+      margin-top: 10px;
+    }
+    .audio-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .audio-container h2, .audio-container p {
+            margin: 0;
+        }
+        .controls button {
+            margin-right: 10px;
+        }
+  </style>
+</head>
+<body>
+<!-- Pop-up container -->
+    <div class="popup-container" style="display: none;">
+        <!-- Popup content -->
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <p>Are you following my socials? </p>
+            <p>If not, <a href="https://linktr.ee/ykdbyjk" target="_blank" >go follow us</a>.</p>
+        </div>
+    </div>
+<audio id="myAudio" src="Music/moonshine.mp3" loop></audio>
+    
+    <div class="audio-container">
+        <div>
+            <h2 id="songName"></h2>
+            <p id="progress"></p>
+        </div>
+        <div class="controls">
+            <button onclick="toggleAudio()">Play</button>
+        </div>
+    </div>
+
+<!-- Header section -->
+<header>
+  <h1>Welcome to YKD</h1>
+  <h1>By JK</h1>
+  <nav>
+    <!-- Navigation links -->
+    <a href="About-me.html" class="text-shadow" "transition-effect">About me</a>
+    <a href="Update.html" class="text-shadow" "transition-effect">Update/News</a>
+    <a href="https://twitter.com/YkdByJK_"></a>
+  </nav>
+</header>
+
+<!-- Collections section -->
+<section id="collections">
+  <div class="container">
+    <h2>Types of Clothing</h2>
+    <p>Discover our diverse range of streetwear, each designed with utmost care and creativity:</p>
+    <ul>
+      <nav> 
+        <a href="Hoodies.html" class="boxed-link" "transition-effect">Hoodies</a>
+        <a href="Accessories.html" class="boxed-link">Accessories</a>
+        <a href="Jackets.html" class="boxed-link">Jackets</a>
+        <a href="T-shirts.html" class="boxed-link">T-shirts</a>
+      </nav>
+    </ul>
+  </div>
+  <p>Here are some available options</p>
+  <div class="slideshow-container">
+    <div class="slideshow">
+      <div class="slide">
+        <img src="Images/Trippy Back.JPG" alt="Trippy">
+      </div>
+      <div class="slide">
+        <img src="Images/Time back.JPG" alt="Time">
+      </div>
+      <div class="slide">
+        <img src="Images/Abstract back .JPG" alt="Abstract">
+      </div>
+    </div>
+    <div class="slideshow">
+      <div class="slide">
+        <img src="Images/Change Back.JPG" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="Images/Let go back .JPG" alt="Slide 3">
+      </div>
+      <div class="slide">
+        <img src="Images/Luxury Back.JPG" alt="Slide 4">
+      </div>
+    </div>
+    <div class="slideshow">
+      <div class="slide">
+        <img src="Images/Names of God back .JPG" alt="Slide 5">
+      </div>
+      <div class="slide">
+        <img src="Images/Rose Back.JPG" alt="Slide 6">
+      </div>
+ <div class="slide">
+        <img src="Images/Pride Back .JPG" alt="Slide 7">
+      </div>
+    </div>
+  </div>
+</section>
+<div class="logo-container">
+  <img class="logo-image" src="Images/YKD.png" alt="YKD">
+</div>
+
+<div class="footer">
+  &copy; YKD By JK. All rights reserved.
+<p>Music from <a href="https://uppbeat.io/t/prigida/moonshine">Uppbeat</a> (free for Creators!)</p>
+        <p>License code: XDOKVLMJLFELBF11R</p>
+</div>
+<div id="music-credit"></div>
+
+<script>
+        var audio = document.getElementById("myAudio");
+        var songNameElement = document.getElementById("songName");
+        var progressElement = document.getElementById("progress");
+        var isPlaying = false;
+
+        audio.addEventListener("loadedmetadata", function() {
+            songNameElement.textContent = "Song: " + audio.currentSrc.split("/").pop();
+            progressElement.textContent = "Progress: 0:00 / " + formatTime(audio.duration);
+        });
+
+        audio.addEventListener("timeupdate", function() {
+            if (!audio.paused) {
+                progressElement.textContent = "Progress: " + formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
+            }
+        });
+
+        audio.addEventListener("canplay", function() {
+            audio.play();
+            isPlaying = true;
+            document.querySelector("button").textContent = "Pause";
+        });
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                document.querySelector("button").textContent = "Play";
+            } else {
+                audio.play();
+                document.querySelector("button").textContent = "Pause";
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function formatTime(time) {
+            var minutes = Math.floor(time / 60);
+            var seconds = Math.floor(time % 60);
+            return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        }
+   
+  // Function to initialize the slideshows
+  function initializeSlideshows() {
+    const slideshows = document.getElementsByClassName("slideshow");
+
+    // Loop through each slideshow
+    for (let i = 0; i < slideshows.length; i++) {
+      const slides = slideshows[i].getElementsByClassName("slide");
+      let slideIndex = 0;
+
+      // Function to display the current slide
+      function showSlide() {
+        for (let j = 0; j < slides.length; j++) {
+          slides[j].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+
+        // Increment slide index and loop back to the first slide
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        }
+
+        // Call the showSlide function recursively after 2 seconds
+        setTimeout(showSlide, 2000);
+      }
+
+      // Initial call to start the slideshow
+      showSlide();
+    }
+  }
+
+  // Call the initializeSlideshows function when the page finishes loading
+  window.addEventListener("load", initializeSlideshows);
+// Wait for the specified time and show the pop-up
+        setTimeout(function() {
+            var popupContainer = document.querySelector('.popup-container');
+            popupContainer.style.display = 'flex';
+        }, 2000);
+        
+        // Close the pop-up when the close button is clicked
+        function closePopup() {
+            var popupContainer = document.querySelector('.popup-container');
+            popupContainer.style.display = 'none';
+        }
+</script>
+</body>
+</html>

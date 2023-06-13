@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Puzzle 1</title>
+  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+
+        }
+        .puzzle-container {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 3px solid #000000;
+            border-radius: 5px;
+        }
+ .page2 {
+      opacity: 0;
+      animation: fade-in 0.5s ease-in-out forwards;
+    }
+    #music-credit {
+      font-size: 14px;
+      color: #981382;
+      margin-top: 10px;
+    }
+.page2 {
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .clue {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .answer-input {
+            width: 200px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        .submit-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="page2">
+    <div class="puzzle-container">
+        <h2>Puzzle 1</h2>
+        <div class="instructions">
+            <p>Solve the puzzle, If you can! HaHa, this is one of many solve them all and you may get a prize</p>
+          
+        </div>
+        <div class="clue">
+            Clue 1: <span id="encryptedClue1">RGQ URYPVPLQJ HPSOH</span>
+        </div>
+        <input class="answer-input" id="clue1" type="text" placeholder="Enter answer">
+        <div class="clue">
+            Clue 2: <span id="encryptedClue2">TLWFQJQQTI XLI WYMPP</span>
+        </div>
+        <input class="answer-input" id="clue2" type="text" placeholder="Enter answer">
+        <div class="clue">
+            Clue 3: <span id="encryptedClue3">LIVMIVSMZ WZGGMZO VMIZWOM</span>
+        </div>
+        <input class="answer-input" id="clue3" type="text" placeholder="Enter answer">
+        <div class="clue">
+            Clue 4: <span id="encryptedClue4">EQNN UQPGTQVKPI VJG UVTGGVKPI</span>
+        </div>
+        <input class="answer-input" id="clue4" type="text" placeholder="Enter answer">
+        <div class="clue">
+            Clue 5: <span id="encryptedClue5">JGNNQF HRUQI RZQ JYRGFC RQ VKRUO</span>
+        </div>
+        <input class="answer-input" id="clue5" type="text" placeholder="Enter answer">
+        <button class="submit-button" onclick="checkAnswer()">Submit</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+                // Function to check the answers
+        function checkAnswer() {
+            var clue1 = document.getElementById("clue1").value.toLowerCase();
+            var clue2 = document.getElementById("clue2").value.toLowerCase();
+            var clue3 = document.getElementById("clue3").value.toLowerCase();
+            var clue4 = document.getElementById("clue4").value.toLowerCase();
+            var clue5 = document.getElementById("clue5").value.toLowerCase();
+
+            var answer = clue1 + clue2 + clue3 + clue4 + clue5;
+
+            if (answer === "welcometoykd") {
+                document.getElementById("result").innerHTML = "Congratulations! Welcome To YKD. Share this puzzle with friends, and dm me on twitter! to show me you solved it! see ya! ";
+            } else {
+                document.getElementById("result").innerHTML = "Looks like someone didn't study! go back to twitter! HAHAHA";
+            }
+        }
+    </script>
+</body>
+</html>
